@@ -1,0 +1,42 @@
+@import "./variables";
+
+#root {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.2;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+    background: #fff;
+}
+#components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+
+a.ant-typography,
+.ant-typography a {
+    color: #1890ff;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+

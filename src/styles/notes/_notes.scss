@@ -1,0 +1,11 @@
+.notes {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 6rem;
+    &__title{
+        margin-bottom: 0;
+
+    }
+}
