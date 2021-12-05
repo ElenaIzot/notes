@@ -4,38 +4,30 @@ import { useState } from 'react';
 import { Note } from '../components/Models';
 
 const { Search } = Input;
-
-type LayoutType = Parameters<typeof Form>[0]['layout'];
 const { Title } = Typography;
-const { Link: L } = Typography;
-
-const notes: Note[] = [];
+const ALL_NOTES: Note[] = [];
 
 export function NotesPage(): JSX.Element {
     const [form] = Form.useForm();
-    const [note, setNote] = useState<Note>({
-        id: null,
-        title: '',
-        description: '',
-    });
-
+    const [notes, setNotes] = useState(ALL_NOTES);
     const [search, setSearch] = useState('');
 
     function handleSubmit(values: any): void {
-        notes.push(values);
-        setNote({
-            id: null,
-            title: '',
-            description: '',
-        });
+        ALL_NOTES.push(values);
+        setNotes([...notes, values]);
         form.resetFields()
     };
 
-    const onSearch = (value: any, event: any) => {
+    function onSearch(value: any) {
+        const searchResult = ALL_NOTES.filter((note: Note) => {
+            if (note.title.includes(value) || note.description.includes(value)) {
+                return true;
+            }
 
-      
-        console.log(value)
-     
+            return false;
+        })
+
+        setNotes(searchResult);
     };
 
     return (
@@ -51,20 +43,10 @@ export function NotesPage(): JSX.Element {
                     onFinish={(values) => handleSubmit(values)}
                 >
                     <Form.Item label="Название заметки" name="title">
-                        <Input placeholder="Введите название заметки..."
-                            value={note.title}
-                            onChange={e => {
-                                setNote({ ...note, title: e.target.value });
-                            }}
-                        />
+                        <Input placeholder="Введите название заметки..." />
                     </Form.Item>
                     <Form.Item label="Текст" name="description">
-                        <Input placeholder="Ввведите текст заметки..."
-                            value={note.description}
-                            onChange={e => {
-                                setNote({ ...note, description: e.target.value });
-                            }}
-                        />
+                        <Input placeholder="Ввведите текст заметки..." />
                     </Form.Item>
                     <Form.Item >
                         <Button type="primary"
@@ -73,7 +55,6 @@ export function NotesPage(): JSX.Element {
                         </Button>
                     </Form.Item>
                 </Form>
-
                 <Row gutter={[16, 16]} className="notes">
                     <Col span={12}>
                         <Title className="notes__title" level={2}>
@@ -96,7 +77,7 @@ export function NotesPage(): JSX.Element {
                     renderItem={note => (
                         <List.Item>
                             <List.Item.Meta
-                                key={note.id}
+                                key={note.title}
                                 avatar={<ProfileTwoTone />}
                                 title={<a href='#'>{note.title}</a>}
                                 description={note.description}
