@@ -1,7 +1,7 @@
 import { Col, Row, Typography, Form, Button, List, Input } from 'antd';
 import { ProfileTwoTone } from '@ant-design/icons';
 import { useState } from 'react';
-import { Note } from '../Note';
+import { Note } from '../Models';
 
 const { Search } = Input;
 const { Title } = Typography;
@@ -13,19 +13,19 @@ export function NotesPage(): JSX.Element {
    
     function handleSubmit(values: any): void {
         ALL_NOTES.push(values);
-        //игнорируем поиск , чтобы не запутать пользователя иначе он Может подумать что сабмит не сработал
+        //игнорируем поиск, чтобы не запутать пользователя, иначе он может подумать, что submit не сработал
         setNotes([...notes, values]);
         form.resetFields();
     };
 
-    function onSearch(value: any) {
+    function onSearch(value: any): void {
         const searchResult = ALL_NOTES.filter((note: Note) => {
             if (note.title.includes(value) || note.description.includes(value)) {
                 return true;
-            }
+            };
 
             return false;
-        })
+        });
 
         setNotes(searchResult);
     };

@@ -5,9 +5,11 @@ import { Typography, Layout, Menu} from "antd";
 import { MainPage } from './pages/mainPage';
 import { NewsPage } from './pages/newsPage';
 import { NotesPage } from './pages/notesPage';
-import { NotFoundPage } from "./pages/notFoundPage";
+
 
 const { Header, Content, Footer } = Layout;
+
+//'Link' wrote like 'L' to avoid conflict with React Router DOM
 const { Link: L } = Typography;
 
 function App() {
@@ -32,7 +34,6 @@ function App() {
             <Route path='/' element={<MainPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path='/notes' element={<NotesPage />} />
-            <Route path='/notFoundPage' element={<NotFoundPage />} />
           </Routes>
         </Content>
         <Footer style={{ textAlign: 'center' }}>©2021 Created by Elena</Footer>
