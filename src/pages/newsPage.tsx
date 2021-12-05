@@ -37,7 +37,7 @@ const news: {
 
 
 export function NewsPage(): JSX.Element {
-    const listNews = news.map((item) =>
+    const listNews: JSX.Element[] = news.map((item) =>
         <Col span={12}>
             <Card
                 key={item.id}

@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Link } = Typography;
 
 export function MainPage(): JSX.Element {
     return (

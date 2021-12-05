@@ -1,26 +1,27 @@
-import { EditTwoTone } from '@ant-design/icons';
-export function Header(): JSX.Element {
+import { Layout, Menu, Typography } from "antd";
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-    return (<>
-        <header className='header'>
-            <div className='logo'>
-                <EditTwoTone twoToneColor="#00a82d"  className='logo_green'/>
-            </div>
-            <nav>
-                <ul className='menu'>
-                    <li className='menu__item'>
-                        <a className='menu__link' href="/" >Главная</a>
-                    </li>
-                    <li className='menu__item'>
-                        <a className='menu__link' href="/news" >Новости</a>
-                    </li>
-                    <li className='menu__item'>
-                        <a className='menu__link' href="/notes" >Профиль</a>
-                    </li>
-                </ul>
-            </nav>
+const { Header } = Layout;
+const { Link: L } = Typography;
 
-        </header>
-    </>
+const MenuHeader = () => {
+    return (
+        <Header>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu.Item>
+                    <Link to="/">Главная</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/news">Новости</Link>
+                </Menu.Item>
+                <Menu.Item>
+                    <Link to="/notes">Профиль</Link>
+                </Menu.Item>
+            </Menu>
+        </Header>
     )
-};
+}
+
+
+
+export default MenuHeader;
