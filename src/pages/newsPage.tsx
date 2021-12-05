@@ -1,8 +1,7 @@
-import { Card, Col, Row, Typography, Image, Divider } from 'antd';
+import { Card, Col, Row, Typography, Image } from 'antd';
 import { News } from '../Models';
 
 const { Paragraph, Text } = Typography;
-const { Meta } = Card;
 const news: News[] = [
     {
         id: 1,
@@ -30,12 +29,9 @@ const news: News[] = [
 export function NewsPage(): JSX.Element {
     const listNews: JSX.Element[] = news.map((item) =>
         <Col span={12}>
-            <Card
-                title={item.title}
-                key={item.id}
-            >
+            <Card title={item.title} key={item.id}>
                 <Image src={item.image} />
-                <Paragraph className="news__text" italic>
+                <Paragraph italic type="secondary">
                     {item.date}
                 </Paragraph>
                 <Paragraph className="news__text" >

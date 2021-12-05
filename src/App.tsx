@@ -17,7 +17,7 @@ function App() {
     <Layout className="layout">
       <Router basename='/'>
         <Header>
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+          <Menu theme="dark" mode="horizontal" >
             <Menu.Item>
               <Link to="/">Главная</Link>
             </Menu.Item>

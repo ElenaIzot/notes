@@ -1,3 +1,7 @@
+.notes-content{
+    height: 100vh;
+}    
+
 .notes {
     display: flex;
     flex-flow: row wrap;
@@ -6,6 +10,16 @@
     margin-top: 6rem;
     &__title{
         margin-bottom: 0;
+    }
+}
 
+@media (max-width: 560px) {
+    .notes {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        &__title{
+            font-size: 20px;
+        }
     }
 }
