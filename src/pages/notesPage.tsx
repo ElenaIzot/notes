@@ -1,7 +1,7 @@
 import { Col, Row, Typography, Form, Button, List, Input } from 'antd';
 import { ProfileTwoTone } from '@ant-design/icons';
 import { useState } from 'react';
-import { Note } from '../components/Models';
+import { Note } from '../Note';
 
 const { Search } = Input;
 const { Title } = Typography;
@@ -10,12 +10,12 @@ const ALL_NOTES: Note[] = [];
 export function NotesPage(): JSX.Element {
     const [form] = Form.useForm();
     const [notes, setNotes] = useState(ALL_NOTES);
-    const [search, setSearch] = useState('');
-
+   
     function handleSubmit(values: any): void {
         ALL_NOTES.push(values);
+        //игнорируем поиск , чтобы не запутать пользователя иначе он Может подумать что сабмит не сработал
         setNotes([...notes, values]);
-        form.resetFields()
+        form.resetFields();
     };
 
     function onSearch(value: any) {
@@ -43,10 +43,10 @@ export function NotesPage(): JSX.Element {
                     onFinish={(values) => handleSubmit(values)}
                 >
                     <Form.Item label="Название заметки" name="title">
-                        <Input placeholder="Введите название заметки..." />
+                        <Input placeholder="Введите название заметки..." required />
                     </Form.Item>
                     <Form.Item label="Текст" name="description">
-                        <Input placeholder="Ввведите текст заметки..." />
+                        <Input placeholder="Ввведите текст заметки..." required/>
                     </Form.Item>
                     <Form.Item >
                         <Button type="primary"
