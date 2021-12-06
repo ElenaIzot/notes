@@ -12,7 +12,7 @@ export function MainPage(): JSX.Element {
         <Paragraph className="main__text">
           Сохраняйте важное с помощью приложения Заметки
         </Paragraph>
-        <Link href="/notes" className="main__link">
+        <Link href="/notes/notes" className="main__link">
           Прейти к созданию заметок
         </Link>
       </Typography>
