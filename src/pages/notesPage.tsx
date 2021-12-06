@@ -66,7 +66,7 @@ export function NotesPage(): JSX.Element {
                             Мои заметки
                         </Title>
                     </Col>
-                    <Col span={12}>
+                    <Col xs={24} xl={8}>
                         <Search
                             placeholder="Найти в заметках..."
                             allowClear

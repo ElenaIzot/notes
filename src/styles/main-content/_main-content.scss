@@ -1,37 +1,37 @@
 .main {
     display: flex;
-    padding: $step*2;
+    padding: $step * 2;
     padding-top: 160px;
     padding-bottom: 100px;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-   
     &__title {
-        font-size: 48px;
+        font-size: 38px;
         padding: $step;
-        margin-bottom: $step*3;
+        margin-bottom: $step * 3;
+        text-align: center;
     }
     &__text {
         font-size: $font-size-medium;
         padding: $step;
-        margin-bottom: $step*3;
-    }
-    &__link {
-        display: inline-block;
-        color: #ffffff;
-        text-decoration: none;
-        background: #001529;
-        border: 0;
-        border-radius: 3px;
-        font-size:$font-size-default;
-        padding: $step*3  $step*4 $step*3;
+        margin-bottom: $step * 3;
         text-align: center;
     }
-    &__link:hover {
-        color: #ffffff;
-        background: rgb(0, 33, 63);
-        text-decoration: none;
-    }
+}
 
+// !important used to overlap Ant Design styles
+
+@media screen and (max-width: 360px) {
+    .main {
+        display: flex;
+        padding: 16px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        align-items: stretch;
+    
+        &__title {
+            font-size: 28px !important;
+        }
+    }
 }
