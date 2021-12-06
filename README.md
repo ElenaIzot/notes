@@ -1,19 +1,11 @@
-# Getting Started with Create React App
+# Application with the ability to add notes and read news.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project has been uploaded to [Open App](http://ElenaIzot.github.io/notes).
 
-## Available Scripts
+## Description of the project
 
-In the project directory, you can run:
+The application is implemented using REACT, Ant design.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The application implements the addition of any note, as well as its search, page navigation, news viewing.
 
 
-
-There is no CSS reset because the app is based on Ant design
