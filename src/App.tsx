@@ -6,7 +6,6 @@ import { MainPage } from './pages/mainPage';
 import { NewsPage } from './pages/newsPage';
 import { NotesPage } from './pages/notesPage';
 
-
 const { Header, Content, Footer } = Layout;
 
 //'Link' wrote like 'L' to avoid conflict with React Router DOM

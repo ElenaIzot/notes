@@ -10,3 +10,8 @@ export interface News {
     image: string;
     date: string;
 };
+
+export interface Action {
+    type: string;
+    payload: any;
+}
