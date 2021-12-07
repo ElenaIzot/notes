@@ -10,10 +10,10 @@ export function MainPage(): JSX.Element {
           Приложение для создания заметок
         </Title>
         <Paragraph className="main__text">
-          Сохраняйте важное с помощью приложения Заметки
+          Вы можете сохранять важные заметки с помощью нашего приложения 
         </Paragraph>
         <Paragraph className="main__text">
-          Читайте все последние новости в разделе Новости
+          А также читать последние новости в ленте новостей 
         </Paragraph>
       </Typography>
     </div>
