@@ -18,21 +18,21 @@ function App() {
         <Header>
           <Menu theme="dark" mode="horizontal" >
             <Menu.Item>
-              <Link to="/notes">Главная</Link>
+              <Link to="">Главная</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/notes/news">Новости</Link>
+              <Link to="/news">Новости</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/notes/notes">Профиль</Link>
+              <Link to="/notes">Профиль</Link>
             </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <Routes>
-            <Route path='/notes' element={<MainPage />} />
-            <Route path="/notes/news" element={<NewsPage />} />
-            <Route path='/notes/notes' element={<NotesPage />} />
+            <Route path='/' element={<MainPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path='/notes' element={<NotesPage />} />
           </Routes>
         </Content>
         <Footer style={{ textAlign: 'center' }}>©2021 Created by Elena</Footer>
