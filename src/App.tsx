@@ -18,7 +18,7 @@ function App() {
         <Header>
           <Menu theme="dark" mode="horizontal" >
             <Menu.Item>
-              <Link to="">Главная</Link>
+              <Link to="/">Главная</Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/news">Новости</Link>
