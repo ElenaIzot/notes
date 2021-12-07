@@ -14,7 +14,7 @@ const { Link: L } = Typography;
 function App() {
   return (
     <Layout className="layout">
-      <Router basename='/'>
+      <Router basename='/notes'>
         <Header>
           <Menu theme="dark" mode="horizontal" >
             <Menu.Item>
